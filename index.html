@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Владимиров Василий | Coach & Mentor</title>
+    <style>
+        :root {
+            --bg-color: #121214;
+            --card-bg: #1a1a1e;
+            --accent-color: #d4a373;
+            --text-main: #e2e2e6;
+            --text-muted: #a0a0a8;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 12px; border: 1px solid #2a2a30; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        /* Переключатель языков */
+        .lang-switch { display: flex; justify-content: flex-end; gap: 10px; margin-bottom: 30px; }
+        .lang-btn { background: transparent; border: 1px solid var(--text-muted); color: var(--text-muted); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 14px; transition: 0.2s; }
+        .lang-btn.active { border-color: var(--accent-color); color: var(--accent-color); background: rgba(212,163,115,0.1); }
+        
+        /* Блоки */
+        section { margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid #2a2a30; }
+        section:last-of-type { border-bottom: none; margin-bottom: 20px; }
+        
+        h1 { color: #fff; font-size: 32px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.5px; }
+        .subtitle { color: var(--accent-color); font-size: 18px; font-weight: 500; margin-bottom: 20px; }
+        h2 { color: #fff; font-size: 20px; margin-bottom: 15px; position: relative; }
+        p { color: var(--text-main); font-size: 16px; margin-bottom: 15px; text-align: justify; }
+        
+        /* Прайс и списки */
+        ul { list-style: none; }
+        li { position: relative; padding-left: 20px; margin-bottom: 12px; color: var(--text-main); text-align: justify; }
+        li::before { content: "•"; color: var(--accent-color); font-weight: bold; position: absolute; left: 0; }
+        .price-list li { background: #222227; padding: 12px 15px 12px 30px; border-radius: 6px; font-weight: 500; }
+        .terms-list li { list-style-type: decimal; padding-left: 5px; margin-left: 20px; }
+        .terms-list li::before { content: none; }
+        
+        /* Контакты и ссылки */
+        .contact-link { color: var(--accent-color); text-decoration: none; font-weight: 600; }
+        .contact-link:hover { text-decoration: underline; }
+        .offer-link { color: var(--text-muted); text-decoration: underline; display: inline-block; margin-top: 10px; font-size: 13px; }
+        .offer-link:hover { color: var(--accent-color); }
+        
+        /* Подвал */
+        footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a30; font-size: 13px; color: var(--text-muted); text-align: center; }
+        
+        /* Переключение контента */
+        [lang="en"] { display: none; }
+        body.lang-en [lang="ru"] { display: none; }
+        body.lang-en [lang="en"] { display: block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+
+    <!-- 1. Главный блок -->
+    <header style="margin-bottom: 40px;">
+        <h1 lang="ru">ВЛАДИМИРОВ ВАСИЛИЙ АНДРЕЕВИЧ</h1>
+        <h1 lang="en">VASILIY VLADIMIROV</h1>
+        <div class="subtitle" lang="ru">Коуч по личной эффективности и саморазвитию</div>
+        <div class="subtitle" lang="en">Personal effectiveness & self-development coach</div>
+        <p lang="ru" style="color: var(--text-muted);">Индивидуальные сессии, разработка личных стратегий роста и менторинг для специалистов в высокорисковых нишах.</p>
+        <p lang="en" style="color: var(--text-muted);">Individual sessions, personal growth strategies and mentoring for high-risk niche specialists.</p>
+    </header>
+
+    <!-- 2. Обо мне -->
+    <section>
+        <h2 lang="ru">Обо мне</h2>
+        <h2 lang="en">About Me</h2>
+        <p lang="ru">Помогаю справляться с психологическим выгоранием, высоким уровнем стресса и дисциплиной. Специализируюсь на прокачке навыков принятия решений в условиях полной неопределенности и жесткого тайм-менеджмента.</p>
+        <p lang="en">I help manage psychological burnout, high stress, and self-discipline. I specialize in upgrading decision-making skills under complete uncertainty and tight time management.</p>
+    </section>
+
+    <!-- 3. Услуги и цены -->
+    <section>
+        <h2 lang="ru">Услуги и цены</h2>
+        <h2 lang="en">Services & Prices</h2>
+        <ul class="price-list">
+            <li lang="ru">Проведение вводного интенсива — 60 USDT</li>
+            <li lang="en">Introductory intensive — 60 USDT</li>
+            <li lang="ru">Консультация по саморазвитию — 100 USDT</li>
+            <li lang="en">Self-development consultation — 100 USDT</li>
+            <li lang="ru">Разработка индивидуальной стратегии развития — 300 USDT</li>
+            <li lang="en">Individual development strategy — 300 USDT</li>
+            <li lang="ru">Пакет из 5 консультаций по саморазвитию — 500 USDT</li>
+            <li lang="en">5-session self-development package — 500 USDT</li>
+        </ul>
+    </section>
+
+    <!-- 4. Условия оплаты -->
+    <section>
+        <h2 lang="ru">Условия оплаты и скидки</h2>
+        <h2 lang="en">Payment terms & Discounts</h2>
+        <ol class="terms-list">
+            <li lang="ru">Цена зафиксирована в USDT. Оплата принимается в рублях по курсу на день покупки либо напрямую в криптовалюте.</li>
+            <li lang="en">The price is pegged to USDT. Payment is accepted in RUB at the current exchange rate or directly in crypto.</li>
+            <li lang="ru">На все повторные консультации (начиная со 2-го занятия) действует скидка до 15%.</li>
+            <li lang="en">A discount of up to 15% applies to all subsequent consultations (starting from the 2nd session).</li>
+            <li lang="ru">Действует реферальная программа: скидка 10% на следующую сессию за рекомендацию меня новому клиенту.</li>
+            <li lang="en">Referral program: get a 10% discount on your next session for recommending me to a new client.</li>
+            <li lang="ru">Для групповых интенсивов и комплексных программ возможна поэтапная (дробная) оплата частями по согласованию с коучем. Каждый платеж может подтверждаться отдельным или сводным чеком.</li>
+            <li lang="en">Milestone (fractional) payment in installments is possible for group intensives and comprehensive programs upon agreement with the coach. Each payment may be confirmed by a separate or consolidated receipt.</li>
+        </ol>
+        <p lang="ru" style="font-size: 14px; color: var(--text-muted); margin-top: 15px;"><i>(Внимание: из-за плавающего курса и системы скидок итоговая рублевая стоимость услуг в чеках всегда индивидуальна).</i></p>
+        <p lang="en" style="font-size: 14px; color: var(--text-muted); margin-top: 15px;"><i>(Please note: due to the floating exchange rate and discount system, the final fiat price in receipts is always customized).</i></p>
+    </section>
+
+    <!-- 5. Контакты -->
+    <section>
+        <h2 lang="ru">Контакты</h2>
+        <h2 lang="en">Contact Me</h2>
+        <ul>
+            <li lang="ru">Telegram: <a href="https://t.me" class="contact-link">@kuzen4eg</a></li>
+            <li lang="en">Telegram: <a href="https://t.me" class="contact-link">@kuzen4eg</a></li>
+            <li lang="ru">Телефон: +79196711276</li>
+            <li lang="en">Phone: +79196711276</li>
+        </ul>
+    </section>
+
+    <!-- 6. Юридический подвал -->
+    <footer>
+        <div lang="ru">
+            <p>Самозанятый: ВЛАДИМИРОВ ВАСИЛИЙ АНДРЕЕВИЧ</p>
+            <p>ИНН: 213001851315</p>
+            <a href="https://docs.google.com/document/d/1-EGzWghP7bHmJYjeeK-87I9o2Y0e7wfTzW2KJ9Xyc74/edit?usp=sharing" target="_blank" class="offer-link">Публичная оферта (Договор оказания услуг)</a>
+        </div>
+        <div lang="en">
+            <p>Self-employed: VASILIY VLADIMIROV</p>
+            <p>Tax ID (INN): 213001851315</p>
+            <a href="https://docs.google.com/document/d/1-EGzWghP7bHmJYjeeK-87I9o2Y0e7wfTzW2KJ9Xyc74/edit?usp=sharing" target="_blank" class="offer-link">Public Offer Agreement</a>
+        </div>
+    </footer>
+</div>
+
+<script>
+    function setLang(lang) {
+        const body = document.body;
+        const buttons = document.querySelectorAll('.lang-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        
+        if (lang === 'en') {
+            body.classList.add('lang-en');
+            event.target.classList.add('active');
+        } else {
+            body.classList.remove('lang-en');
+            event.target.classList.add('active');
+        }
+    }
+</script>
+</body>
+</html>
